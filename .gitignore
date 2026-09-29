@@ -1,0 +1,5 @@
+venv/
+Dataset/Raw/
+Dataset/olist.db
+.ipynb_checkpoints/
+__pycache__/
