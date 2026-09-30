@@ -12,5 +12,13 @@
 4. Late % spiked in 2017-11 (12.4%), 2018-02 (14.1%) and 2018-03 (19.0%). The Feb-Mar 2018 spike is not explained by order volume.
 5. Long delivery time does not mean late: PA has the longest delivery (23.8 days) but 11.2% late.
 
-## Next
-Split delivery time into seller handling and carrier transit to find where the delay happens.
+## Root cause: where the time goes
+| Phase | On-time | Late |
+|---|---|---|
+| Approval | 0.4 days | 0.5 days |
+| Seller handling | 2.6 days | 5.5 days |
+| Carrier transit | 8.0 days | 27.9 days |
+
+- About 87% of the extra time in late orders is carrier transit. Seller handling adds about 13% (it is 2x longer than on-time orders). Approval makes no difference.
+- Different-state orders: 8.04% late, 15.1 days. Same-state orders: 4.52% late, 7.9 days. About 76% of late orders are cross-state.
+- Next: seller-level scorecard to see how concentrated the problem is.
