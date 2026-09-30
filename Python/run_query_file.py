@@ -5,5 +5,9 @@ sql = open(sys.argv[1], encoding="utf-8").read()
 
 pd.set_option("display.width", 200)
 for q in [s for s in sql.split(";") if s.strip()]:
-    print(pd.read_sql(q, conn).to_string(index=False))
-    print()
+    cur = conn.execute(q)
+    if cur.description:
+        cols = [d[0] for d in cur.description]
+        print(pd.DataFrame(cur.fetchall(), columns=cols).to_string(index=False))
+        print()
+conn.commit()
